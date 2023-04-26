@@ -4,8 +4,15 @@
 
 
 <script>
+import axios from 'axios'
+
 export default {
-    components: 'Home'
+    components: 'Home',
+    async created(){
+        const response = await axios.get('user');
+
+        console.log(response);
+    }
 }
 
 </script>

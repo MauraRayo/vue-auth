@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default{
     name: 'Register',
     data(){
@@ -48,19 +49,19 @@ export default{
     },
 
     methods:{
-        hadleSubmit(){
-            const data = {
+       async hadleSubmit(){
+          const response = await axios.post('register', {
                 first_name      : this.first_name,
                 last_name       : this.last_name,
                 email           :this.email,
                 password        : this.password,
                 password_confirm: this.password_confirm
-            }
+            });
+            console.log(response);
+            this.$router.push('/login');
 
-
-            // e.preventDefault()
-            console.log(data)
-        }
+       }
+   
     }
 }
 
