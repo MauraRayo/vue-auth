@@ -1,0 +1,11 @@
+<template>
+   <h3>Home</h3>
+</template>
+
+
+<script>
+export default {
+    components: 'Home'
+}
+
+</script>
